@@ -1,0 +1,80 @@
+*,
+::after,
+::before {
+  box-sizing: border-box;
+  margin: 0%;
+  padding: 0%;
+  font-size: sans-serif;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: "nunito", sans-serif;
+  background: linear-gradient(to right, #fb7ba2, #fce043);
+}
+.card {
+  display: grid;
+  grid-template-columns: repeat(4, 70px);
+  grid-template-rows: min-max(100px, auto) repeat(4, 500px);
+  background: rgba(255, 255, 255, 0.5);
+  padding: 1rem;
+}
+.input {
+  grid-column-start: span 4;
+  grid-row-start: span 2;
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem;
+  border: none;
+}
+.input-new {
+  border: none;
+}
+.errMsg {
+  color: red;
+  margin-top: 1rem;
+}
+.list {
+  grid-column-start: span 4;
+  grid-row-start: span 2;
+  padding: 0.5rem;
+}
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+#add-button {
+  border: none;
+  background: royalblue;
+  color: white;
+  cursor: pointer;
+  padding: 0 2rem;
+}
+#add-button:hover {
+  background: rgb(91, 128, 236);
+}
+ul {
+  list-style: none;
+}
+.list-class {
+  background: rgba(245, 245, 245, 0.5);
+  margin-bottom: 0.3rem;
+  padding: 0.5rem;
+  border-left: 5px solid royalblue;
+}
+li:hover {
+  background: rgba(245, 245, 245, 0.9);
+  cursor: pointer;
+}
+p {
+  color: rgba(0, 0, 0, 0.5);
+  text-align: center;
+}
+.input-new {
+  padding: 0.5rem;
+  margin: 0 0.2rem;
+}
