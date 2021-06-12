@@ -65,10 +65,10 @@ ul {
   margin-bottom: 0.3rem;
   padding: 0.5rem;
   border-left: 5px solid royalblue;
+  position: relative;
 }
 li:hover {
   background: rgba(245, 245, 245, 0.9);
-  cursor: pointer;
 }
 p {
   color: rgba(0, 0, 0, 0.5);
@@ -77,4 +77,14 @@ p {
 .input-new {
   padding: 0.5rem;
   margin: 0 0.2rem;
+}
+.delete-btn {
+  position: absolute;
+  right: 1rem;
+  background: transparent;
+  border: none;
+}
+.delete-btn:hover {
+  color: red;
+  cursor: pointer;
 }
