@@ -3,7 +3,6 @@ const addButton = document.querySelector("#add-button")
 const list = document.querySelector(".saved-list")
 const heading = document.querySelector(".heading")
 const errMsg = document.querySelector(".errMsg");
-const listItem = document.querySelector(".list-class")
 
 function addNewList() {
     if(input.value !== '') { //if not empty
@@ -30,10 +29,21 @@ function addNewList() {
    }
 }
 
-function deleteList() {
-    newbtn.textContent = '';
-}
+
 addButton.addEventListener('click', addNewList);
+
+// Instead of targeting an element, we target a static parent -- I've chosen
+// body since it's always there, but in bigger applications it's better to 
+// target a more specific parent
+document.querySelector('.saved-list').addEventListener('click', event => {
+	
+    // This version checks the current element for a match, as well as it's parents.
+    // If none is found, it returns null
+    if (event.target.matches('.list-class') || event.target.closest('.list-class')) {
+    	event.target.closest('.list-class').remove();
+    }
+})
+
 
 
 
