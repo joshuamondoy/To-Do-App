@@ -71,6 +71,7 @@ body {
   top: 0;
   bottom: 0;
   right: 2.6rem;
+  color: green;
 }
 .check-btn:hover {
   background: green;
@@ -98,12 +99,15 @@ body {
 ul {
   list-style: none;
 }
-.list-class {
+.list-container {
+  position: relative;
   background: rgba(245, 245, 245, 0.5);
+  border-left: 5px solid royalblue;
+}
+.list-class {
   margin-bottom: 0.3rem;
   padding: 0.5rem;
-  border-left: 5px solid royalblue;
-  position: relative;
+  width: 68%;
 }
 .list-class:hover {
   background: rgba(245, 245, 245, 0.9);
