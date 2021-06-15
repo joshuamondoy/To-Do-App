@@ -108,11 +108,11 @@ ul {
   margin-bottom: 0.3rem;
   padding: 0.5rem;
 }
+.list-container:hover {
+  background: rgba(245, 245, 245, 0.9);
+}
 .list-class {
   width: 68%;
-}
-.list-class:hover {
-  background: rgba(245, 245, 245, 0.9);
 }
 p {
   color: rgba(0, 0, 0, 0.5);
