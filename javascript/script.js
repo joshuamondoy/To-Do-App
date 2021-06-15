@@ -43,15 +43,17 @@ function checkDelete(event) {
     const item = event.target;
     if(item.className === 'delete-btn') {
         const listDiv = item.parentElement; //this will delete the parent element which is the div itself
-        listDiv.remove();
-        if(list.getElementsByTagName('li').length <= 0) {
-            document.querySelector('.empty').textContent = 'No list to show';
-        }
-        
-        
+        listDiv.classList.add('del-fall'); //delete animation
+        listDiv.addEventListener("transitionend", function(){ //transitionend event will wait for the animation to be finish before performing the delete function
+            listDiv.remove();
+            if(list.getElementsByTagName('li').length <= 0) { //check if there is no list 
+                document.querySelector('.empty').textContent = 'No list to show';
+            }
+            
+        });  
     } else if(item.className === 'check-btn') {
         const text = item.parentElement;
-        text.style.cssText = 'text-decoration: line-through; color: grey; border-left: 5px solid green'
+        text.style.cssText = 'text-decoration: line-through; color: grey; border-left: 5px solid green; background: rgba(245, 245, 245, 0.3); transition: all 0.5s ease'
     }
 
    
