@@ -4,8 +4,6 @@ const list = document.querySelector(".saved-list")
 const heading = document.querySelector(".heading")
 const errMsg = document.querySelector(".errMsg");
 
-
-
 function addNew() {
     if(input.value !== '') { //if not empty
         //initialize
@@ -18,7 +16,7 @@ function addNew() {
         checkBtn.innerText = "✔" //set label for dash button
         listVal = listVal[0].toUpperCase() + listVal.slice(1); //capitalized the first letter
         //append
-        list.append(newDiv)
+        list.prepend(newDiv) //this will append the new div in the ul 
         newDiv.append(newList)
         newList.append(document.createTextNode(listVal)) //append the li to the text from the form
         newDiv.append(delBtn) //append the button to the new list
@@ -29,6 +27,7 @@ function addNew() {
         newList.className = "list-class"; //provide class name for the new li's
         input.value = '';
         errMsg.textContent = '';
+        document.querySelector('.empty').textContent = '';
         
             
    } else {
@@ -41,18 +40,14 @@ function addNew() {
 
 
 function checkDelete(event) {
-     // This version checks the current element for a match, as well as it's parents.
-    // If none is found, it returns null
-    // if (event.target.matches('.list-class') || event.target.closest('.list-class')) {
-    //     event.target.closest('.list-class').remove();
-    // }
     const item = event.target;
     if(item.className === 'delete-btn') {
-        const list = item.parentElement; //this will delete the parent element which is the li itself
-        list.remove();
-        if(list.length <= 0) {
-            console.log('empty')
+        const listDiv = item.parentElement; //this will delete the parent element which is the div itself
+        listDiv.remove();
+        if(list.getElementsByTagName('li').length <= 0) {
+            document.querySelector('.empty').textContent = 'No list to show';
         }
+        
         
     } else if(item.className === 'check-btn') {
         const text = item.parentElement;

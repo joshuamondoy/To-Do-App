@@ -10,7 +10,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;
+  max-height: auto;
   font-family: "nunito", sans-serif;
   background: linear-gradient(to bottom right, #fb7ba2, #fce043);
 }
@@ -19,6 +20,7 @@ body {
   grid-template-columns: repeat(4, 70px);
   grid-template-rows: min-max(100px, auto) repeat(4, 500px);
   background: rgba(255, 255, 255, 0.5);
+  min-height: 300px;
   padding: 1rem;
 }
 .header-container {
