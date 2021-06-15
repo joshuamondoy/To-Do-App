@@ -111,7 +111,7 @@ ul {
   background: rgba(245, 245, 245, 0.7);
   border-left: 5px solid royalblue;
   margin-bottom: 0.3rem;
-  padding: 0.5rem;
+  padding: 1rem;
 }
 .list-container:hover {
   background: rgba(245, 245, 245, 0.9);
