@@ -19,7 +19,6 @@ body {
   display: grid;
   grid-template-columns: repeat(4, 90px);
   grid-template-rows: min-max(100px, auto) repeat(4, 500px);
-  background: rgba(255, 255, 255, 0.5);
   min-height: 300px;
   padding: 1rem;
 }
@@ -31,23 +30,31 @@ body {
   padding: 0.5rem;
   border: none;
 }
+.header-container .header {
+  display: flex;
+  justify-content: space-between;
+}
+.header .indicator {
+  color: rgba(0, 0, 0, 0.5);
+}
 .form {
   display: flex;
   justify-content: space-between;
 }
 .input {
-  padding: 0.7rem;
   width: 90%;
   border: none;
   outline: none;
+  background: transparent;
+  border-bottom: 1px solid white;
 }
 #add-button {
   border: none;
-  background: royalblue;
   color: white;
   cursor: pointer;
-  padding: 0.5rem 1rem;
-  font-size: 1rem;
+  font-size: 3rem;
+  background: transparent;
+  cursor: pointer;
 }
 .delete-btn {
   position: absolute;
@@ -58,10 +65,6 @@ body {
   border: none;
   padding: 0.5rem 1rem;
   color: red;
-}
-.delete-btn:hover {
-  color: rgb(255, 255, 255);
-  background: rgba(253, 0, 0, 0.9);
   cursor: pointer;
 }
 .del-fall {
@@ -79,10 +82,6 @@ body {
   bottom: 0;
   right: 2.6rem;
   color: green;
-}
-.check-btn:hover {
-  background: green;
-  color: white;
   cursor: pointer;
 }
 .errMsg {
@@ -98,10 +97,6 @@ body {
   display: flex;
   justify-content: center;
   margin-bottom: 1rem;
-}
-
-#add-button:hover {
-  background: rgb(91, 128, 236);
 }
 ul {
   list-style: none;
@@ -119,7 +114,7 @@ ul {
 .list-class {
   width: 68%;
 }
-p {
+.empty {
   color: rgba(0, 0, 0, 0.5);
   text-align: center;
 }
