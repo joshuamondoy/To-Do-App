@@ -40,7 +40,7 @@ function addNew() {
        setTimeout(() => {
         warning.classList.remove('warning');
         warning.placeholder = 'Enter task';
-       }, 2000)
+       }, 1000)
    }
 }
 
@@ -82,8 +82,8 @@ function countTask() {
 }
 
 function deleteAll() {
-    const delAll = document.querySelectorAll('.list-class');
-    delAll.parentElement.remove()
+    const delAll = document.querySelectorAll('.list-class').parentElement;
+    delAll.remove()
 }
 
 
