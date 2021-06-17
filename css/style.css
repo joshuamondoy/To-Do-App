@@ -51,7 +51,7 @@ body {
   outline: none;
 }
 .input:focus {
-  border: 1px solid royalblue;
+  border: 2px solid royalblue;
 }
 #add-button {
   border: none;
