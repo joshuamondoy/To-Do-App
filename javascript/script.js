@@ -2,7 +2,9 @@ const input = document.querySelector('[data-new-item]')
 const addButton = document.querySelector("#add-button")
 const list = document.querySelector(".saved-list")
 const heading = document.querySelector(".heading")
-const errMsg = document.querySelector(".errMsg");
+const errMsg = document.querySelector(".err-msg");
+const taskNumber = document.querySelector(".task-number")
+const allClear = document.querySelector(".clear");
 
 function addNew() {
     if(input.value !== '') { //if not empty
@@ -26,14 +28,18 @@ function addNew() {
         checkBtn.className = "check-btn"; //provide class name for the btn
         newList.className = "list-class"; //provide class name for the new li's
         input.value = '';
-        errMsg.textContent = '';
         document.querySelector('.empty').textContent = '';
+        countTask();
         
             
    } else {
-       errMsg.textContent = "No input yet!";
+       const warning = document.getElementsByName('input')[0];
+       warning.classList.add('warning');
+       warning.value = ''
+       warning.placeholder = '*No input yet'
        setTimeout(() => {
-        errMsg.textContent = '';
+        warning.classList.remove('warning');
+        warning.placeholder = 'Enter task';
        }, 2000)
    }
 }
@@ -46,6 +52,7 @@ function checkDelete(event) {
         listDiv.classList.add('del-fall'); //delete animation
         listDiv.addEventListener("transitionend", function(){ //transitionend event will wait for the animation to be finish before performing the delete function
             listDiv.remove();
+            countTask()
             if(list.getElementsByTagName('li').length <= 0) { //check if there is no list 
                 document.querySelector('.empty').textContent = 'No list to show';
             }
@@ -53,12 +60,31 @@ function checkDelete(event) {
         });  
     } else if(item.className === 'check-btn') {
         const text = item.parentElement;
-        text.style.cssText = 'text-decoration: line-through; color: grey; border-left: 5px solid green; background: rgba(245, 245, 245, 0.3); transition: all 0.5s ease'
-    }
+        text.classList.add('checked-list');
+        item.style.cssText = "display: none"
+
+        // unfinishTask.textContent = 0;
+        // let taskLeft = list.getElementsByTagName('li').length - 1;
+        // unfinishTask.textContent = `${taskLeft} unfinish task`
+        
+        
 
    
+    }
+}
+function countTask() {
+    taskNumber.textContent = 0;
+    let taskLeft = list.getElementsByTagName('li').length;
+    taskNumber.textContent = `You have ${taskLeft} saved task`
+    if(taskLeft === 0) {
+        taskNumber.textContent = '';
+    }
 }
 
+function deleteAll() {
+    const delAll = document.querySelectorAll('.list-class');
+    delAll.parentElement.remove()
+}
 
 
 addButton.addEventListener('click', addNew);
@@ -67,5 +93,6 @@ addButton.addEventListener('click', addNew);
 // body since it's always there, but in bigger applications it's better to 
 // target a more specific parent
 list.addEventListener('click', checkDelete)
+allClear.addEventListener('click', deleteAll);
 
 

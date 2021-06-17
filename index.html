@@ -7,27 +7,28 @@
     <title>To-Do App</title>
     <link rel="shortcut icon" href="image/todo.png" type="image/png">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet"> 
 </head>
 <body>
     <div class="card">
         <div class="header-container">
             <div class="header">
                 <h1 class="heading">TO-DO</h1>
-                <div class="indicator">
-                    <p class="task-number"></p>
-                    <p></p>
-                </div>
             </div>
             <div class="form">
-                <input type="text" name="input" id="input" data-new-item class="input" placeholder="Enter Task" tabindex="1"> 
+                <input type="text" name="input" id="input" data-new-item class="input" placeholder="Enter new task" tabindex="1"> 
                 <input type="button" value="+" id="add-button" tabindex="2">   
             </div>
-            <p class="errMsg"></p>  
         </div>
         <div class="list">
             <ul class="saved-list">
                 <p class="empty">No list to show</p>
             </ul>
+        </div>
+        <div class="footer">
+            <p class="task-number"></p>
+            <button class="clear">Clear all</button>
         </div>
     </div>
     <script src="javascript/script.js"></script>
