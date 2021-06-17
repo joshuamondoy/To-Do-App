@@ -10,13 +10,13 @@ body {
   justify-content: center;
   align-items: center;
   font-family: "Nunito", sans-serif;
-  height: 100vh;
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
 }
 .card {
+  margin: 2rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -93,9 +93,8 @@ body {
   font-style: italic;
 }
 .list {
-  /* grid-column-start: span 4; */
-  grid-row-start: span 2;
   padding: 0.5rem;
+  margin-top: 1rem;
 }
 .header {
   display: flex;
@@ -153,6 +152,14 @@ ul {
   background: rgb(91, 127, 235);
 }
 
+@media (max-width: 500px) {
+  .card {
+    min-height: 90vh;
+    min-width: 400px;
+    padding: 1rem;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+}
 @media (max-width: 450px) {
   .card {
     min-width: 350px;
