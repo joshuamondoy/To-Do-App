@@ -50,6 +50,9 @@ body {
   border: 1px solid rgba(170, 170, 170, 0.5);
   outline: none;
 }
+.input:focus {
+  border: 1px solid royalblue;
+}
 #add-button {
   border: none;
   background: royalblue;
