@@ -68,9 +68,6 @@
   border-bottom-left-radius: 9px;
   border-top-left-radius: 9px;
 }
-.input:focus {
-  outline: 1px solid royalblue;
-}
 #add-button {
   border: none;
   background: royalblue;
