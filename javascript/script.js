@@ -14,8 +14,6 @@ function addNew() {
         let listVal = input.value; //get the value from form
         const delBtn = document.createElement("button"); //create delete button
         const checkBtn = document.createElement("button")//create dash button
-        delBtn.innerText = "✖"; //set label for the button
-        checkBtn.innerText = "✔" //set label for dash button
         listVal = listVal[0].toUpperCase() + listVal.slice(1); //capitalized the first letter
         //append
         list.prepend(newDiv) //this will append the new div in the ul 
@@ -24,8 +22,10 @@ function addNew() {
         newDiv.append(delBtn) //append the button to the new list
         newDiv.append(checkBtn)//append the button to the new list
         newDiv.className = "list-div"
-        delBtn.className = "delete-btn"; //provide class name for the btn
-        checkBtn.className = "check-btn"; //provide class name for the btn
+        delBtn.className = "fas fa-trash-alt"; //provide class name for font awesome icon
+        delBtn.classList.add("delete-btn") //add another class name for css style
+        checkBtn.className = "fas fa-check-square"; //provide class name for font awesome icon
+        checkBtn.classList.add("check-btn") //provide class name for css style
         newList.className = "list-class"; //provide class name for the new li's
         input.value = '';
         document.querySelector('.empty').textContent = '';
@@ -66,9 +66,6 @@ function checkDelete(event) {
         // unfinishTask.textContent = 0;
         // let taskLeft = list.getElementsByTagName('li').length - 1;
         // unfinishTask.textContent = `${taskLeft} unfinish task`
-        
-        
-
    
     }
 }
@@ -81,18 +78,16 @@ function countTask() {
     }
 }
 
-function deleteAll() {
-    const delAll = document.querySelectorAll('.list-class').parentElement;
-    delAll.remove()
-}
-
-
+// function deleteAll() {
+//     const delAll = document.querySelectorAll('.list-class').parentElement;
+//     delAll.remove()
+// }
 addButton.addEventListener('click', addNew);
 
 // Instead of targeting an element, we target a static parent -- I've chosen
 // body since it's always there, but in bigger applications it's better to 
 // target a more specific parent
 list.addEventListener('click', checkDelete)
-allClear.addEventListener('click', deleteAll);
+// allClear.addEventListener('click', deleteAll);
 
 

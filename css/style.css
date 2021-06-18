@@ -98,6 +98,7 @@ body {
   padding: 0.5rem 1rem;
   color: red;
   cursor: pointer;
+  overflow: hidden;
 }
 .del-fall {
   transform: translateY(8rem) rotateZ(20deg);
@@ -127,6 +128,7 @@ body {
   margin-bottom: 0.3rem;
   padding: 1rem;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  cursor: pointer;
 }
 .list {
   z-index: 1;
@@ -145,6 +147,7 @@ ul {
 .empty {
   color: rgba(0, 0, 0, 0.5);
   text-align: center;
+  margin-top: 5rem;
 }
 .fade {
   opacity: 0;
