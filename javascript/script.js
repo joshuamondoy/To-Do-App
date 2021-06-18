@@ -74,8 +74,10 @@ function countTask() {
     let taskLeft = list.getElementsByTagName('li').length;
     taskNumber.classList = 'fas fa-clipboard-check';
     taskNumber.textContent = ` ${taskLeft}`;
+    taskNumber.style.cssText = 'color: #17a2b8';
     if(taskLeft === 0) {
         taskNumber.textContent = '';
+        taskNumber.style.cssText = 'color: white';
     }
 }
 
