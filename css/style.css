@@ -169,7 +169,7 @@ ul {
     width: 80%;
   }
 }
-@media (max-width: 400px) {
+@media (max-width: 450px) {
   .main-header-container {
     width: 90%;
     margin-top: 3rem;
