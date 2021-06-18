@@ -21,11 +21,11 @@ function addNew() {
         newList.append(document.createTextNode(listVal)) //append the li to the text from the form
         newDiv.append(delBtn) //append the button to the new list
         newDiv.append(checkBtn)//append the button to the new list
-        newDiv.className = "list-div"
+        newDiv.className = "list-div";
         delBtn.className = "fas fa-trash-alt"; //provide class name for font awesome icon
-        delBtn.classList.add("delete-btn") //add another class name for css style
+        delBtn.id = "delete-btn"; //add an id name for css style
         checkBtn.className = "fas fa-check-square"; //provide class name for font awesome icon
-        checkBtn.classList.add("check-btn") //provide class name for css style
+        checkBtn.id = "check-btn"; //provid id name for css style
         newList.className = "list-class"; //provide class name for the new li's
         input.value = '';
         document.querySelector('.empty').textContent = '';
@@ -47,7 +47,7 @@ function addNew() {
 
 function checkDelete(event) {
     const item = event.target;
-    if(item.className === 'delete-btn') {
+    if(item.id === 'delete-btn') {
         const listDiv = item.parentElement; //this will delete the parent element which is the div itself
         listDiv.classList.add('del-fall'); //delete animation
         listDiv.addEventListener("transitionend", function(){ //transitionend event will wait for the animation to be finish before performing the delete function
@@ -58,7 +58,7 @@ function checkDelete(event) {
             }
             
         });  
-    } else if(item.className === 'check-btn') {
+    } else if(item.id === 'check-btn') {
         const text = item.parentElement;
         text.classList.add('checked-list');
         item.style.cssText = "display: none"
