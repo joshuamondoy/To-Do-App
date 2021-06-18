@@ -6,52 +6,67 @@
   padding: 0%;
 }
 body {
+  font-family: "Fira Sans", sans-serif;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  font-family: "Nunito", sans-serif;
-  display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   flex-direction: column;
   align-items: center;
 }
-.card {
-  margin: 5rem;
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 1rem;
+  position: sticky;
+  top: 0;
+  right: 0;
+  width: 100%;
+  z-index: 2;
+}
+.task-number {
+  font-size: 0.8rem;
+}
+.clear-btn {
+  padding: 0.5rem 1rem;
+  background: royalblue;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+}
+.clear-btn:hover {
+  background: rgb(91, 127, 235);
+}
+.main-header-container {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  position: relative;
-  min-height: 500px;
-  min-width: 400px;
-  padding: 1rem;
-  background: white;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  position: sticky;
+  top: 1rem;
+  z-index: 2;
+  width: 50%;
+  margin-top: 9rem;
 }
-.header-container {
+.main-heading {
   display: flex;
-  flex-direction: column;
-  padding: 0.5rem;
-  border: none;
-}
-.header-container .header {
-  display: flex;
-  justify-content: space-between;
-}
-.header .heading {
-  font-size: 1.5rem;
+  justify-content: center;
+  margin-bottom: 1rem;
 }
 .form {
   display: flex;
-  justify-content: space-between;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 9px;
 }
 .input {
-  padding: 0.7rem;
-  width: 90%;
-  border: 1px solid rgba(170, 170, 170, 0.5);
+  padding: 1rem;
+  width: 100%;
+  border: none;
   outline: none;
+  border-bottom-left-radius: 9px;
+  border-top-left-radius: 9px;
 }
 .input:focus {
-  border: 2px solid royalblue;
+  border: 2 px solid royalblue;
 }
 #add-button {
   border: none;
@@ -61,9 +76,17 @@ body {
   font-size: 1rem;
   padding: 1rem 1.4rem;
   transform: none;
+  border-bottom-right-radius: 9px;
+  border-top-right-radius: 9px;
 }
 #add-button:hover {
   background: rgb(91, 127, 235);
+}
+.list-container {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin: 3rem 0;
 }
 .delete-btn {
   position: absolute;
@@ -97,19 +120,7 @@ body {
   color: red;
   font-style: italic;
 }
-.list {
-  padding: 0.5rem;
-  margin-bottom: 3rem;
-}
-.header {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 1rem;
-}
-ul {
-  list-style: none;
-}
-.list-container {
+.list-div {
   position: relative;
   background: white;
   border-left: 5px solid royalblue;
@@ -117,8 +128,11 @@ ul {
   padding: 1rem;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
-.list-class {
-  width: 68%;
+.list {
+  z-index: 1;
+}
+ul {
+  list-style: none;
 }
 .checked-list {
   text-decoration: line-through;
@@ -136,41 +150,31 @@ ul {
   opacity: 0;
   transition: all 0.1s ease;
 }
-.footer {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  padding: 1rem;
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  width: 100%;
-}
-.task-number {
-  margin-top: 1rem;
-  font-size: 0.8rem;
-}
-.clear {
-  padding: 0.5rem 1rem;
-  background: royalblue;
-  color: white;
-  border: none;
-  cursor: pointer;
-}
-.clear:hover {
-  background: rgb(91, 127, 235);
-}
 
-@media (max-width: 500px) {
-  .card {
-    min-height: 80vh;
-    min-width: 400px;
-    padding: 1rem;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+@media (max-width: 900px) {
+  .main-header-container {
+    width: 70%;
+    margin-top: 3rem;
+  }
+  .list-container {
+    width: 70%;
   }
 }
-@media (max-width: 450px) {
-  .card {
-    min-width: 350px;
+@media (max-width: 500px) {
+  .main-header-container {
+    width: 80%;
+    margin-top: 3rem;
+  }
+  .list-container {
+    width: 80%;
+  }
+}
+@media (max-width: 400px) {
+  .main-header-container {
+    width: 90%;
+    margin-top: 3rem;
+  }
+  .list-container {
+    width: 90%;
   }
 }

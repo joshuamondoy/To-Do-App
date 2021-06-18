@@ -23,7 +23,7 @@ function addNew() {
         newList.append(document.createTextNode(listVal)) //append the li to the text from the form
         newDiv.append(delBtn) //append the button to the new list
         newDiv.append(checkBtn)//append the button to the new list
-        newDiv.className = "list-container"
+        newDiv.className = "list-div"
         delBtn.className = "delete-btn"; //provide class name for the btn
         checkBtn.className = "check-btn"; //provide class name for the btn
         newList.className = "list-class"; //provide class name for the new li's
