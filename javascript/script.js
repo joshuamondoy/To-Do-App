@@ -3,7 +3,7 @@ const addButton = document.querySelector("#add-button")
 const list = document.querySelector(".saved-list")
 const heading = document.querySelector(".heading")
 const errMsg = document.querySelector(".err-msg");
-const taskNumber = document.querySelector(".task-number")
+const taskNumber = document.querySelector("#task-number")
 const allClear = document.querySelector(".clear");
 
 function addNew() {
@@ -72,7 +72,7 @@ function checkDelete(event) {
 function countTask() {
     taskNumber.textContent = 0;
     let taskLeft = list.getElementsByTagName('li').length;
-    taskNumber.textContent = `You have ${taskLeft} saved task`
+    taskNumber.textContent = ` ${taskLeft}`;
     if(taskLeft === 0) {
         taskNumber.textContent = '';
     }

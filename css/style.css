@@ -4,15 +4,16 @@
   box-sizing: border-box;
   margin: 0%;
   padding: 0%;
-}
-body {
   font-family: "Fira Sans", sans-serif;
+}
+.main-container {
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-around;
   flex-direction: column;
   align-items: center;
+  height: 100vh;
 }
-.header {
+.header-container {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -23,7 +24,7 @@ body {
   width: 100%;
   z-index: 2;
 }
-.task-number {
+#task-number {
   font-size: 0.8rem;
 }
 .clear-btn {
@@ -152,6 +153,14 @@ ul {
 .fade {
   opacity: 0;
   transition: all 0.1s ease;
+}
+.footer {
+  position: relative;
+}
+.footer-text {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
 }
 
 @media (max-width: 900px) {
