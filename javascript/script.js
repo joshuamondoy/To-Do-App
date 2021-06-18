@@ -72,6 +72,7 @@ function checkDelete(event) {
 function countTask() {
     taskNumber.textContent = 0;
     let taskLeft = list.getElementsByTagName('li').length;
+    taskNumber.classList = 'fas fa-clipboard-check';
     taskNumber.textContent = ` ${taskLeft}`;
     if(taskLeft === 0) {
         taskNumber.textContent = '';
