@@ -6,7 +6,7 @@
   padding: 0%;
 }
 .main-container {
-  font-family: "Fira Sans", sans-serif;
+  font-family: "Baloo Tammudu 2", cursive;
   display: flex;
   justify-content: flex-start;
   flex-direction: column;
@@ -36,6 +36,7 @@
   border: none;
   cursor: pointer;
   border-radius: 4px;
+  transition-duration: 0.4s;
 }
 .clear-btn:hover {
   background: #138496;
@@ -54,6 +55,20 @@
   display: flex;
   justify-content: center;
   margin-bottom: 1rem;
+  animation-name: main-heading-animation;
+  animation-duration: 4s;
+}
+@keyframes main-heading-animation {
+  0% {
+    color: #17a2b8;
+    left: 0;
+  }
+  50% {
+    color: #dc143c;
+  }
+  100% {
+    color: #555555;
+  }
 }
 .form {
   display: flex;
@@ -78,9 +93,13 @@
   transform: none;
   border-bottom-right-radius: 9px;
   border-top-right-radius: 9px;
+  transition-duration: 0.4s;
 }
 #add-button:hover {
   background: #138496;
+}
+#add-button:focus {
+  outline: none;
 }
 .list-container {
   display: flex;
@@ -99,6 +118,7 @@
   color: #dc143c;
   cursor: pointer;
   font-size: 1.5rem;
+  transition-duration: 0.4s;
 }
 .del-fall {
   transform: translateY(8rem) rotateZ(20deg);
@@ -117,6 +137,7 @@
   color: #04aa6d;
   cursor: pointer;
   font-size: 1.5rem;
+  transition-duration: 0.4s;
 }
 .warning {
   color: red;
@@ -129,13 +150,17 @@
   margin-bottom: 0.3rem;
   padding: 1rem;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  cursor: pointer;
+}
+.list-div:hover {
+  background: rgba(0, 0, 0, 0.1);
+  transition-duration: 0.4s;
 }
 .list {
   z-index: 1;
 }
 ul {
   list-style: none;
+  font-family: "Nunito", sans-serif;
 }
 .checked-list {
   text-decoration: line-through;
