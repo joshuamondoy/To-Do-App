@@ -77,7 +77,10 @@ function countTask() {
 }
 
 function deleteAll() {
-    document.querySelectorAll('.list-div').parentElement.remove()
+    const allSaveList = document.querySelectorAll('.list-div');
+    allSaveList.forEach((savedList) => {
+        savedList.remove()
+    })
 }
 addButton.addEventListener('click', addNew);
 
