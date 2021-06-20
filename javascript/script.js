@@ -3,11 +3,11 @@ const addButton = document.querySelector("#add-button")
 const list = document.querySelector(".saved-list")
 const heading = document.querySelector(".heading")
 const errMsg = document.querySelector(".err-msg");
-const taskNumber = document.querySelector("#task-number")
+const taskNumber = document.querySelector("#task-number");
 const allClear = document.querySelector(".clear-btn");
 
 function addNew() {
-    if(input.value !== '') { //if not empty
+    if(input.value !== '' && input.value !== ' ') { //if not empty
         //initialize
         const newDiv = document.createElement("div");
         let newList = document.createElement("li"); //create new li
@@ -65,11 +65,9 @@ function checkDelete(event) {
     }
 }
 function countTask() {
-    taskNumber.textContent = 0;
     let taskLeft = list.getElementsByTagName('li').length;
-    taskNumber.classList = 'fas fa-tasks';
+    taskNumber.style.cssText = 'color: #17a2b8';
     taskNumber.textContent = ` ${taskLeft}`;
-    taskNumber.style.cssText = 'color: white';
     if(taskLeft === 0) {
         taskNumber.textContent = '';
         taskNumber.style.cssText = 'color: transparent';

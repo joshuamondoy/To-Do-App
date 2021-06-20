@@ -25,6 +25,7 @@
   font-size: 0.8rem;
   color: #17a2b8;
   font-size: 1.5rem;
+  padding: auto;
 }
 .clear-btn {
   padding: 1rem;
@@ -48,6 +49,7 @@
   flex-direction: column;
   gap: 3rem;
   width: 50%;
+  margin-top: 2rem;
 }
 .main-heading {
   display: flex;
