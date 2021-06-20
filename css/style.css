@@ -23,7 +23,6 @@
   background: linear-gradient(to right bottom, #00aaff, #00ff6c);
   padding-bottom: 2rem;
   margin-bottom: 1rem;
-  min-height: 40vh;
 }
 .header {
   display: flex;
