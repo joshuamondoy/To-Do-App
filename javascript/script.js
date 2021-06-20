@@ -22,7 +22,7 @@ function addNew() {
         newDiv.append(delBtn) //append the button to the new list
         newDiv.append(checkBtn)//append the button to the new list
         newDiv.className = "list-div";
-        delBtn.className = "far fa-times-circle"; //provide class name for font awesome icon
+        delBtn.className = "far fa-times-circle "; //provide class name for font awesome icon
         delBtn.id = "delete-btn"; //add an id name for css style
         checkBtn.className = "fas fa-check"; //provide class name for font awesome icon
         checkBtn.id = "check-btn"; //provid id name for css style
