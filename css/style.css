@@ -12,10 +12,10 @@
   flex-direction: column;
   align-items: center;
   height: 100vh;
+  position: relative;
 }
 #header {
   width: 100vw;
-  height: 40vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -23,6 +23,8 @@
   background: linear-gradient(to right bottom, #00aaff, #00ff6c);
   padding-bottom: 2rem;
   margin-bottom: 1rem;
+  position: fixed;
+  z-index: 2;
 }
 .header {
   display: flex;
@@ -110,11 +112,6 @@
 #add-button:focus {
   outline: none;
 }
-.list-container {
-  display: flex;
-  flex-direction: column;
-  width: 50%;
-}
 #delete-btn {
   position: absolute;
   right: 0;
@@ -151,6 +148,13 @@
   color: red;
   font-style: italic;
 }
+.list-container {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  height: 60vh;
+  margin-top: 40vh;
+}
 .list-div {
   position: relative;
   background: white;
@@ -162,9 +166,6 @@
 .list-div:hover {
   background: rgba(0, 0, 0, 0.1);
   transition-duration: 0.4s;
-}
-.list {
-  z-index: 1;
 }
 ul {
   list-style: none;
