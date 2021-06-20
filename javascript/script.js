@@ -22,7 +22,7 @@ function addNew() {
         newDiv.append(delBtn) //append the button to the new list
         newDiv.append(checkBtn)//append the button to the new list
         newDiv.className = "list-div";
-        delBtn.className = "far fa-trash-alt"; //provide class name for font awesome icon
+        delBtn.className = "far fa-times-circle"; //provide class name for font awesome icon
         delBtn.id = "delete-btn"; //add an id name for css style
         checkBtn.className = "fas fa-check"; //provide class name for font awesome icon
         checkBtn.id = "check-btn"; //provid id name for css style
@@ -69,10 +69,10 @@ function countTask() {
     let taskLeft = list.getElementsByTagName('li').length;
     taskNumber.classList = 'fas fa-tasks';
     taskNumber.textContent = ` ${taskLeft}`;
-    taskNumber.style.cssText = 'color: #17a2b8';
+    taskNumber.style.cssText = 'color: white';
     if(taskLeft === 0) {
         taskNumber.textContent = '';
-        taskNumber.style.cssText = 'color: white';
+        taskNumber.style.cssText = 'color: transparent';
     }
 }
 
@@ -80,6 +80,7 @@ function deleteAll() {
     const allSaveList = document.querySelectorAll('.list-div');
     allSaveList.forEach((savedList) => {
         savedList.remove()
+        countTask()
     })
 }
 addButton.addEventListener('click', addNew);

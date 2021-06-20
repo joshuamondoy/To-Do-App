@@ -8,27 +8,28 @@
     <link rel="shortcut icon" href="image/todo.png" type="image/png">
     <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap" rel="stylesheet"> 
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Baloo+Tammudu+2:wght@500&display=swap" rel="stylesheet"> 
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"> 
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 </head>
 <body>
     <div class="main-container">
+       <div id="header">
         <div class="header">
             <p id="task-number"></p>
-            <button class="clear-btn">Clear all</button>
         </div>
         <div class="main-header-container">
             <div class="main-heading">
-                <h1 class="heading">To-do list</h1>
+                <h1 class="heading">TO-DO LIST</h1>
+                <p class="date-time">Saturday, June 06, 2021</p>
             </div>
             <div class="form">
                 <input type="text" name="input" id="input" data-new-item class="input" placeholder="Enter new task" tabindex="1"> 
                 <button id="add-button" tabindex="2" class="fas fa-plus" />   
             </div>
         </div>
+       </div>
         <div class="list-container">
             <div class="list">
                 <ul class="saved-list">
@@ -37,6 +38,9 @@
             </div>
         </div>
     </div>
+    <div class="clear-btn-container">
+        <button class="far fa-trash-alt clear-btn"></button>
+   </div>
     <script src="javascript/script.js"></script>
 </body>
 </html>
