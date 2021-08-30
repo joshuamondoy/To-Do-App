@@ -88,8 +88,9 @@ function countTask() {
         taskNumber.textContent = '';
         taskNumber.style.cssText = 'color: transparent';
         taskNumberIcon.style.cssText = 'color: transparent';
+        allClear.style.cssText = 'cursor: none';
     } else {
-        allClear.style.cssText = 'background: #dc143c; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); color: white';
+        allClear.style.cssText = 'box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); color: white';
     }
 }
 function deleteAll() {
@@ -97,6 +98,7 @@ function deleteAll() {
     allSaveList.forEach((savedList) => {
         savedList.remove()
         countTask()
+        document.querySelector('.empty').textContent = 'No list to show';
         allClear.style.cssText = 'background: transparent; box-shadow: none';
     })
 }
