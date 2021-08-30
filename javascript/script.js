@@ -4,7 +4,25 @@ const list = document.querySelector(".saved-list")
 const heading = document.querySelector(".heading")
 const errMsg = document.querySelector(".err-msg");
 const taskNumber = document.querySelector("#task-number");
+const taskNumberIcon = document.querySelector(".task-number-icon ");
 const allClear = document.querySelector(".clear-btn");
+const currentDate = document.querySelector(".date-time");
+
+function formatDate(dateObject) {
+    const dayName = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+    const monthName =  ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+    const dateParts = {
+        dayOfTheWeek: dayName[dateObject.getDay()],
+        day: dateObject.getDate(),
+        month: monthName[dateObject.getMonth()],
+        year: dateObject.getFullYear()
+    };
+    
+    return `${dateParts.dayOfTheWeek}, ${dateParts.month} ${dateParts.day}, ${dateParts.year}`;
+}
+const myDate = new Date();
+const formattedDate = formatDate(myDate);
+currentDate.textContent = formattedDate;
 
 function addNew() {
     if(input.value !== '' && input.value !== ' ') { //if not empty
@@ -30,8 +48,6 @@ function addNew() {
         input.value = '';
         document.querySelector('.empty').textContent = '';
         countTask();
-        
-            
    } else {
        const warning = document.getElementsByName('input')[0];
        warning.classList.add('warning');
@@ -43,8 +59,6 @@ function addNew() {
        }, 1000)
    }
 }
-
-
 function checkDelete(event) {
     const item = event.target;
     if(item.id === 'delete-btn') {
@@ -55,6 +69,7 @@ function checkDelete(event) {
             countTask()
             if(list.getElementsByTagName('li').length <= 0) { //check if there is no list 
                 document.querySelector('.empty').textContent = 'No list to show';
+                allClear.style.cssText = 'background: transparent; box-shadow: none';
             }
             
         });  
@@ -66,19 +81,23 @@ function checkDelete(event) {
 }
 function countTask() {
     let taskLeft = list.getElementsByTagName('li').length;
-    taskNumber.style.cssText = 'color: #17a2b8';
+    taskNumber.style.cssText = 'color: white';
     taskNumber.textContent = ` ${taskLeft}`;
+    taskNumberIcon.style.cssText = 'color: white';
     if(taskLeft === 0) {
         taskNumber.textContent = '';
         taskNumber.style.cssText = 'color: transparent';
+        taskNumberIcon.style.cssText = 'color: transparent';
+    } else {
+        allClear.style.cssText = 'background: #dc143c; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); color: white';
     }
 }
-
 function deleteAll() {
     const allSaveList = document.querySelectorAll('.list-div');
     allSaveList.forEach((savedList) => {
         savedList.remove()
         countTask()
+        allClear.style.cssText = 'background: transparent; box-shadow: none';
     })
 }
 addButton.addEventListener('click', addNew);

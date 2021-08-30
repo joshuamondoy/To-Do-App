@@ -5,6 +5,24 @@
   margin: 0%;
   padding: 0%;
 }
+body {
+  background: url("/image/bg.jpg") no-repeat center center/cover;
+  color: white;
+  z-index: -1;
+}
+body::after {
+  /* this will serve as a black cover before the background-image so text will be highlightened */
+  /* without content it won't work so we declare an empty content */
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.1);
+  /* z-index will tell what element will be at the top and what will be behind */
+  z-index: -1;
+}
 .main-container {
   font-family: "Roboto", sans-serif;
   display: flex;
@@ -17,21 +35,23 @@
 .header {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  padding: 1rem;
+  justify-content: flex-start;
+  float: left;
   width: 100%;
+  height: 1rem;
 }
 #task-number {
   font-size: 0.8rem;
   color: white;
   font-size: 1.5rem;
-  padding: auto;
+}
+.task-number-icon {
+  padding: 0.4rem;
+  height: 1rem;
+  color: transparent;
 }
 .clear-btn {
   padding: 1rem;
-  background: #dc143c;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  color: white;
   border: none;
   cursor: pointer;
   transition-duration: 0.4s;
@@ -40,6 +60,8 @@
   bottom: 1rem;
   border-radius: 50%;
   z-index: 3;
+  background: transparent;
+  color: transparent;
 }
 .clear-btn:hover {
   background: #b60326;
@@ -61,14 +83,14 @@
 }
 @keyframes main-heading-animation {
   0% {
-    color: #ec9f05;
+    color: royalblue;
     left: 0;
   }
   50% {
-    color: #ff4e00;
+    color: coral;
   }
   100% {
-    color: #00aaff;
+    color: #ffffff;
   }
 }
 .date-time {
@@ -145,13 +167,14 @@
 .list-div {
   position: relative;
   background: white;
+  color: black;
   border-left: 5px solid #17a2b8;
   margin-bottom: 0.3rem;
   padding: 1rem;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .list-div:hover {
-  background: rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.6);
   transition-duration: 0.4s;
 }
 ul {
@@ -160,14 +183,14 @@ ul {
 }
 .checked-list {
   text-decoration: line-through;
-  color: grey;
-  background: rgba(0, 0, 0, 0.1);
+  color: rgb(110, 110, 110);
+  background: rgb(187, 187, 187);
   transition: all 0.5s ease;
   box-shadow: none;
   border: none;
 }
 .empty {
-  color: rgba(0, 0, 0, 0.5);
+  color: white;
   text-align: center;
   margin-top: 5rem;
 }
