@@ -139,7 +139,7 @@ body {
   font-size: 1.5rem;
   transition-duration: 0.4s;
 }
-.warning {
+.warning::placeholder {
   color: red;
   font-style: italic;
 }

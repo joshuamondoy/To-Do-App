@@ -51,7 +51,7 @@ function addNew() {
    } else {
        input.classList.add('warning');
        input.value = ''
-       input.placeholder = '*No input yet'
+       input.placeholder = '*Please input a task'
        setTimeout(() => {
         input.classList.remove('warning');
         input.placeholder = 'Enter task';
