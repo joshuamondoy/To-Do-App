@@ -169,7 +169,7 @@ ul {
 .checked-list {
   text-decoration: line-through;
   color: rgb(110, 110, 110);
-  background: #fb8500;
+  background: rgba(255, 255, 255, 0.6);;
   transition: all 0.5s ease;
   box-shadow: none;
   border: none;
