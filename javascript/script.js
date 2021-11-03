@@ -49,14 +49,14 @@ function addNew() {
         document.querySelector('.empty').textContent = '';
         countTask();
    } else {
-       const warning = document.getElementsByName('input')[0];
-       warning.classList.add('warning');
-       warning.value = ''
-       warning.placeholder = '*No input yet'
+       input.classList.add('warning');
+       input.value = ''
+       input.placeholder = '*No input yet'
        setTimeout(() => {
-        warning.classList.remove('warning');
-        warning.placeholder = 'Enter task';
+        input.classList.remove('warning');
+        input.placeholder = 'Enter task';
        }, 1000)
+    
    }
 }
 function checkDelete(event) {
@@ -103,6 +103,14 @@ function deleteAll() {
     })
 }
 addButton.addEventListener('click', addNew);
+
+// for enter key event listener
+input.addEventListener('keyup', (e) => {
+    if (e.keyCode === 13) {
+        
+        addNew();
+    }
+});
 
 // Instead of targeting an element, we target a static parent -- I've chosen
 // body since it's always there, but in bigger applications it's better to 
