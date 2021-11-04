@@ -96,10 +96,15 @@ function countTask() {
 function deleteAll() {
     const allSaveList = document.querySelectorAll('.list-div');
     allSaveList.forEach((savedList) => {
-        savedList.remove()
-        countTask()
-        document.querySelector('.empty').textContent = 'No list to show';
-        allClear.style.cssText = 'background: transparent; box-shadow: none';
+        savedList.classList.add('del-fall');
+        savedList.addEventListener("transitionend", function(){ //transitionend event will wait for the animation to be finish before performing the delete function
+            savedList.remove()
+            countTask()
+            document.querySelector('.empty').textContent = 'No list to show';
+            allClear.style.cssText = 'background: transparent; box-shadow: none';
+            
+        });  
+        
     })
 }
 // What’s happening is that by writing out our function with the parentheses on the end () we are calling the function. “Don’t we want to call the function?” you might say. And we do want to call it but we only want to call it once the event occurs. When we include the parentheses on the end like that, we execute that function as soon as the line is read by our program. The function will execute as soon as the script loads which is before the user can click the button.
@@ -117,5 +122,6 @@ input.addEventListener('keyup', (e) => { // annonymous arrow function
 // list since it's always there and it is the main parent of the div that we are going to delete
 list.addEventListener('click', checkDelete)
 allClear.addEventListener('click', deleteAll);
+
 
 
