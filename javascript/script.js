@@ -103,13 +103,13 @@ function deleteAll() {
     })
 }
 // What’s happening is that by writing out our function with the parentheses on the end () we are calling the function. “Don’t we want to call the function?” you might say. And we do want to call it but we only want to call it once the event occurs. When we include the parentheses on the end like that, we execute that function as soon as the line is read by our program. The function will execute as soon as the script loads which is before the user can click the button.
+//https://medium.com/analytics-vidhya/reference-functions-in-event-listeners-dont-call-53063b21d64a
 addButton.addEventListener('click', addNew);
 
 // for enter key event listener
-input.addEventListener('keyup', (e) => {
+input.addEventListener('keyup', (e) => { // annonymous arrow function
     if (e.keyCode === 13) {
-        
-        addNew();
+        addNew(); // in this case we put () to addNew function since this function is already inside another function which is the annonymous arrow function above, so upon load this addNew function is not called until the function above is called
     }
 });
 
