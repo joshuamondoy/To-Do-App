@@ -54,7 +54,7 @@ function addNew() {
        input.placeholder = '*Please input a task'
        setTimeout(() => {
         input.classList.remove('warning');
-        input.placeholder = 'Enter task';
+        input.placeholder = 'Enter new task';
        }, 1000)
     
    }
@@ -102,6 +102,7 @@ function deleteAll() {
         allClear.style.cssText = 'background: transparent; box-shadow: none';
     })
 }
+// What’s happening is that by writing out our function with the parentheses on the end () we are calling the function. “Don’t we want to call the function?” you might say. And we do want to call it but we only want to call it once the event occurs. When we include the parentheses on the end like that, we execute that function as soon as the line is read by our program. The function will execute as soon as the script loads which is before the user can click the button.
 addButton.addEventListener('click', addNew);
 
 // for enter key event listener
