@@ -114,8 +114,7 @@ input.addEventListener('keyup', (e) => { // annonymous arrow function
 });
 
 // Instead of targeting an element, we target a static parent -- I've chosen
-// body since it's always there, but in bigger applications it's better to 
-// target a more specific parent
+// list since it's always there and it is the main parent of the div that we are going to delete
 list.addEventListener('click', checkDelete)
 allClear.addEventListener('click', deleteAll);
 
